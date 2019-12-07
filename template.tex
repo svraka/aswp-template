@@ -11,15 +11,11 @@ $endif$
 $endif$
 %
 \documentclass[
-$if(fontsize)$
-  $fontsize$,
-$endif$
+  12pt,
 $if(lang)$
   $babel-lang$,
 $endif$
-$if(papersize)$
-  $papersize$paper,
-$endif$
+a4paper
 $for(classoption)$
   $classoption$$sep$,
 $endfor$
@@ -124,9 +120,7 @@ $endif$
 $if(verbatim-in-note)$
 \VerbatimFootnotes % allow verbatim text in footnotes
 $endif$
-$if(geometry)$
-\usepackage[$for(geometry)$$geometry$$sep$,$endfor$]{geometry}
-$endif$
+\usepackage[a4paper]{geometry}
 $if(listings)$
 \usepackage{listings}
 \newcommand{\passthrough}[1]{#1}
