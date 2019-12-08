@@ -253,11 +253,26 @@ $if(has-frontmatter)$
 \frontmatter
 $endif$
 $if(title)$
+% Create a fake title page because no reasonably long abstract will
+% leave enough space at the bottom. And narrow the bottom margin to
+% slide footnotes down. See Section 6.4 of the `geometry' package how
+% they calculate the default 5.346cm.
+\newgeometry{bottom=3cm}
 \maketitle
+\thispagestyle{empty} % Need to put after \maketitle
 $if(abstract)$
 \begin{abstract}
-$abstract$
+  \noindent $abstract$\\
+  $if(jel)$
+
+  \noindent \textbf{JEL codes}: $for(jel)$$jel$$sep$, $endfor$
+  $endif$
+  $if(keywords)$
+
+  \noindent \textbf{Keywords}: $for(keywords)$$keywords$$sep$, $endfor$
+  $endif$
 \end{abstract}
+\restoregeometry
 $endif$
 $endif$
 
