@@ -240,7 +240,12 @@ $if(subtitle)$
 \makeatother
 \subtitle{$subtitle$}
 $endif$
-\author{$for(author)$$author$$sep$ \and $endfor$}
+\author{
+  $for(author)$$author.name$$if(author.affiliation)$\thanks{
+    $author.affiliation$
+  }$endif$$sep$ \and
+  $endfor$
+}
 \date{$date$}
 
 \begin{document}
