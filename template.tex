@@ -102,8 +102,8 @@ $endif$
 $if(title-meta)$
   pdftitle={$title-meta$},
 $endif$
-$if(author-meta)$
-  pdfauthor={$author-meta$},
+$if(author)$
+  pdfauthor={$for(author)$$author.name$$sep$, $endfor$},
 $endif$
 $if(lang)$
   pdflang={$lang$},
