@@ -1,3 +1,7 @@
+This is a fork of [pandoc-templates] for [aswp], an R Markdown template.
+
+[aswp]: https://github.com/svraka/aswp
+
 The [pandoc-templates] repository contains default templates for [pandoc].
 
 If you use custom templates, we recommend forking this
